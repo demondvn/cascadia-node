@@ -1,16 +1,11 @@
 FROM golang:1.19.6
 
 RUN apt-get update && apt-get install -y \
-    make \
-    clang \
-    pkg-config \
-    libssl-dev \
-    build-essential \
     git \
     jq \
-    ncdu \
-    bsdmainutils \
-    htop
+    curl \
+    gzip
+
 
 RUN curl -L https://github.com/CascadiaFoundation/cascadia/releases/download/v0.1.1/cascadiad-v0.1.1-linux-amd64 -o cascadiad \
     && chmod u+x cascadiad \
